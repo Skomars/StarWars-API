@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="main.js"></script>
+    <!-- Bootstrap CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body class="d-flex flex-column align-items-center">
+    <main>
+      <h1
+        class="fw-bolder d-flex flex-row mx-auto text-warning justify-content-center mx-auto mt-5 text-xl-center"
+      >
+        Star Wars Search
+      </h1>
+      <form
+        method="get"
+        class="row row-cols-lg-auto g-3 align-items-center mt-4"
+      >
+        <div class="form-group has-search">
+          <span class="form-control-feedback"
+            ><i class="bi bi-search"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control"
+            id="query"
+            placeholder="Search"
+          />
+        </div>
+        <div class="col-12">
+          <label class="visually-hidden" for="inlineFormSelectPref"
+            >Preference</label
+          >
+          <select class="form-select" id="category">
+            <option value="films">Films</option>
+            <option value="people">People</option>
+            <option value="planets">Planets</option>
+            <option value="species">Species</option>
+            <option value="starships">Starships</option>
+            <option value="vehicles">Vehicles</option>
+          </select>
+        </div>
+
+        <div class="col-12 d-flex">
+          <button
+            type="button"
+            class="btn btn-warning btn-block mx-auto"
+            id="search-button"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+      <div class="spinner spinner-hidden">
+        <div class="spinner-border text-warning" role="status"></div>
+      </div>
+      <div class="text-white text-md-start mt-4" id="res"></div>
+    </main>
+  </body>
+</html>
