@@ -6,7 +6,6 @@ main {
 
 body {
   background-color: #1c1e22;
-  margin: 0 auto;
   width: 80%;
   margin: 50px auto;
 }
@@ -38,6 +37,15 @@ form {
   padding-left: 2.375rem;
 }
 
+.form-control {
+  border-color: #c3ac00;
+}
+.form-select:focus,
+.form-control:focus {
+  border-color: #c3ac00;
+  box-shadow: 0 0 0 0.05rem #ffc107;
+}
+
 .bi-search {
   color: black;
 }
@@ -54,8 +62,14 @@ form {
   border-color: #c3ac00;
 }
 
+#search-button::after {
+  background-color: #c3ac00;
+  border-color: #c3ac00;
+}
+
 .form-select {
   cursor: pointer;
+  border-color: #c3ac00;
 }
 
 .spinner {
@@ -66,4 +80,27 @@ form {
 
 .spinner-hidden {
   display: none;
+}
+
+#res,
+#hits {
+  cursor: default;
+}
+
+#hits {
+  color: #ffc107;
+}
+
+.form-group:hover {
+  border-color: #c3ac00;
+}
+
+ul {
+  margin-top: 30px;
+  padding: 0;
+  display: grid;
+}
+
+li {
+  list-style: none;
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Star Wars Search</title>
     <script defer src="main.js"></script>
     <!-- Bootstrap CSS only -->
     <link
@@ -23,13 +23,13 @@
   <body class="d-flex flex-column align-items-center">
     <main>
       <h1
-        class="fw-bolder d-flex flex-row mx-auto text-warning justify-content-center mx-auto mt-5 text-xl-center"
+        class="fw-bolder d-flex flex-row mx-auto text-warning justify-content-center mx-auto mt-5 text-xxl-center"
       >
         Star Wars Search
       </h1>
       <form
         method="get"
-        class="row row-cols-lg-auto g-3 align-items-center mt-4"
+        class="row row-cols-md-auto g-3 align-items-center mt-4"
       >
         <div class="form-group has-search">
           <span class="form-control-feedback"
@@ -39,13 +39,11 @@
             type="text"
             class="form-control"
             id="query"
-            placeholder="Search"
+            placeholder="Search..."
+            autocomplete="false"
           />
         </div>
         <div class="col-12">
-          <label class="visually-hidden" for="inlineFormSelectPref"
-            >Preference</label
-          >
           <select class="form-select" id="category">
             <option value="films">Films</option>
             <option value="people">People</option>
@@ -69,6 +67,7 @@
       <div class="spinner spinner-hidden">
         <div class="spinner-border text-warning" role="status"></div>
       </div>
+      <div class="fw-bold text-md-start mt-4" id="hits"></div>
       <div class="text-white text-md-start mt-4" id="res"></div>
     </main>
   </body>
