@@ -4,7 +4,7 @@ const spinner = document.querySelector(".spinner");
 const hits = document.getElementById("hits");
 const screen = document.getElementById("res");
 
-//? Init
+// Init
 init = () => {
   const searchBtn = document.getElementById("search-button");
   searchBtn.addEventListener("click", () => {
@@ -13,7 +13,7 @@ init = () => {
 };
 init();
 
-//? Get data for category and search for results
+// Get data for category and search for results
 async function fetchData() {
   screen.textContent = "";
   hits.textContent = "";
@@ -24,7 +24,8 @@ async function fetchData() {
   console.log(`category: ${category}`);
   console.log(`query: ${query}`);
 
-  spinner.classList.remove("spinner-hidden"); //? Loading finished, hiding spinner
+  // Loading finished, hiding spinner
+  spinner.classList.remove("spinner-hidden"); 
 
   const results = await fetch(`${BaseUrl}/${category}/?search=${query}`);
   const data = await results.json();
@@ -33,7 +34,8 @@ async function fetchData() {
     hits.textContent = `No hit!`;
     console.log(`No hit! (Show message on front-end)`);
   } else {
-    //! while/ do-while loop all pages here! if(next.data !== null) that means next page exists
+    
+    // while/do-while loop all pages here! if(next.data !== null) that means next page exists
 
     hits.textContent = `${data.count} hit/hits!`;
     console.log(`${data.count} hit/hits!`);
@@ -43,14 +45,17 @@ async function fetchData() {
 
     switch (category) {
       case "people":
-        populatePersons(data.results); //? Running function "populatePersons()""
+        // Running function "populatePersons()"
+        populatePersons(data.results); 
         break;
     }
   }
-  spinner.classList.add("spinner-hidden"); //? Loading finished, hiding spinner
+  // Loading finished, hiding spinner
+  spinner.classList.add("spinner-hidden"); 
 }
 
-//? Populate persons
+// Populate persons Only objects in "/people" can be appended to front-end 
+// Limit of 10. The rest of the pages needs to be checked if we want to polulate more people items.
 populatePersons = (people) => {
   for (const person in people) {
     const personObject = people[person];
@@ -71,9 +76,9 @@ populatePersons = (people) => {
     personContainer.appendChild(nameListItem);
     personContainer.appendChild(genderListItem);
     personContainer.appendChild(massListItem);
-    //! TODO:  Add "more" button/link
+    // TODO:  Add a "more" button/link
   }
 };
 
-//! Bootstrap tables for results?
-//! More categories in switch statement
+// Bootstrap tables for results?
+// More categories in switch statement
